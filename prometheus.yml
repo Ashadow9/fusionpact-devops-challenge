@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  # Application metrics
+  - job_name: "fastapi-backend"
+    static_configs:
+      - targets: ["backend:8000"]
+
+  # Infrastructure metrics
+  - job_name: "infrastructure"
+    static_configs:
+      - targets: ["node-exporter:9100"]
+
